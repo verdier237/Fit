@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.message p {
+    word-wrap: break-word; /* Permet le retour à la ligne pour les mots longs */
+    overflow-wrap: break-word; /* Permet le retour à la ligne pour les mots longs */
+}
+  p {
+    margin: 0;
+  }
+  
+  .performance-facts {
+    border: 1px solid black;
+    font-size: small;
+    line-height: 1.4;
+    float: left;
+    table {
+      border-collapse: collapse;
+    }
+  }
+  .performance-facts__title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 0 0.10rem 0;
+  }
+  .performance-facts__header {
+    border-bottom: 4px solid black;
+    margin: 0 0 0.5rem 0;
+    p {
+      margin: 0;
+    }
+  }
+  .performance-facts__table {
+    width: 100%;
+    thead tr {
+      th,
+      td {
+        border: 0;
+      }
+    }
+    th,
+    td {
+      font-weight: normal;
+      text-align: left;
+      border-top: 1px solid black;
+      white-space: nowrap;
+    }
+    td {
+      &:last-child {
+        text-align: right;
+      }
+    }
+    .blank-cell {
+      width: 0.5rem;
+      border-top: 0;
+    }
+    .thick-row {
+      th,
+      td {
+        border-top-width: 5px;
+      }
+    }
+  }
+  .small-info {
+    font-size: 0.7rem;
+  }
+  
+  .performance-facts__table--small {
+    @extend .performance-facts__table;
+    border-bottom: 1px solid #999;
+    margin: 0 0 0.5rem 0;
+    thead {
+      tr {
+        border-bottom: 1px solid black;
+      }
+    }
+    td {
+      &:last-child {
+        text-align: left;
+      }
+    }
+    th,
+    td {
+      border: 0;
+      padding: 0;
+    }
+  }
+  
+  .performance-facts__table--grid {
+    @extend .performance-facts__table;
+    margin: 0 0 0.5rem 0;
+    td {
+      &:last-child {
+        text-align: left;
+        &::before {
+          content: "•";
+          font-weight: bold;
+          margin: 0 0.10rem 0 0;
+        }
+      }
+    }
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  .thick-end {
+    border-bottom: 4px solid black;
+  }
+  .thin-end {
+    border-bottom: 1px solid black;
+  }
+  
